@@ -32,6 +32,8 @@ class Application {
 			model.addAttribute("cfservice", "")
 			model.addAttribute("cfservice", new LinkedHashMap())
 		}
+                System.out.println("Test stdout from the application");
+                System.err.println("Test stderr from the application");
 		return "index"
 	}
 
