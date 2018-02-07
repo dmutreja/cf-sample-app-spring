@@ -1,0 +1,27 @@
+---
+jobs:
+- name: job-deploy-app
+  public: false
+  serial: true
+  plan:
+  - get: spring-sample-app
+    trigger: true
+  - put: cf-dev-env
+    params:
+      manifest: spring-sample-app/manifest.yml
+
+resources:
+- name: spring-sample-app
+  type: git
+  source:
+    uri: https://github.com/dmutreja/cf-sample-app-spring
+
+- name: cf-dev-env
+  type: cf
+  source:
+    api: ((cf-apiserver-url))
+    username: ((cf-user))
+    password: ((cf-passowrd))
+    organization: ((cf-org))
+    space: ((cf-space))
+    skip_cert_check: true
