@@ -9,6 +9,7 @@ jobs:
   - put: cf-dev-env
     params:
       manifest: spring-sample-app/manifest.yml
+      path: spring-sample-app
 
 resources:
 - name: spring-sample-app
