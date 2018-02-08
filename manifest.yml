@@ -2,6 +2,6 @@
 applications:
 - name: cf-spring
   memory: 768M
-  instances: 1
+  instances: 2
   random-route: true
   buildpack: java_buildpack
