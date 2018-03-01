@@ -33,9 +33,7 @@ class Application {
 			model.addAttribute("cfservice", "")
 			model.addAttribute("cfservice", new LinkedHashMap())
 		}
-/*
                 System.out.println("Hello: today is " + new Date().toString()) 
-*/
 		return "index"
 	}
 
